@@ -62,19 +62,19 @@ const DragDrop = () => {
 
   return (
     <div className="drag-container grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-1">
-      <div className="wip">
-        <h2>Work In Progress</h2>
+      <div className="wip border m-6 rounded-lg p-4 shadow-lg bg-[#FFEFF3] border-[#F72E68]">
+        <h2>Work In Progress tasks</h2>
         {tasksByCategory.wip}
       </div>
 
       <div
-        className="droppable"
+        className="droppable border m-6 rounded-lg p-4 shadow-lg bg-[#E4F8EB] border-[#1EBE5B]"
         onDragOver={(event) => onDragOver(event)}
         onDrop={(event) => onDrop(event, "complete")}
       >
-        <h2>Completed</h2>
+        <h2>Completed tasks</h2>
         {tasksByCategory.complete}
-        <button onClick={resetTasks}>Reset</button>
+        <button onClick={resetTasks} className="px-4 py-2 bg-[#BCBBDB] m-4 font-semibold rounded-md self-center">Reset</button>
       </div>
     </div>
   );
